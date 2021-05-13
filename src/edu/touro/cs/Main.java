@@ -10,7 +10,7 @@ import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
-class Anagram // UNtested
+class Anagram // UN-tested
 {
     public static String canonicalFormRemoveDuplicate(String s)
     {
@@ -44,10 +44,6 @@ public class Main {
                 .sorted()
                 .mapToObj(c->((char)c) + "")
                 .collect(Collectors.joining());
-    }
-    public static List<List<String>> FindAllAnagrams(List<String> wordList)
-    {
-        return getLists(wordList);
     }
 
     public static void main(String[] args) {
