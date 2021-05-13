@@ -22,7 +22,7 @@ class Anagram // UNtested
                 .collect(Collectors.joining());
     }
 
-    public static List<List<String>> FindAllAnagrams(List<String> wordList) {
+    public static List<List<String>> findAllAnagrams(List<String> wordList) {
         return wordList
                 .stream()
                 .collect(groupingBy(Main::canonicalFormRemoveDuplicate))
