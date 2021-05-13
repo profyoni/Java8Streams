@@ -22,9 +22,8 @@ class Anagram // UNtested
                 .collect(Collectors.joining());
     }
 
-    public static List<List<String>> FindAllAnagrams(List<String> wordList)
-    {
-        return (List<List<String>> )wordList
+    public static List<List<String>> FindAllAnagrams(List<String> wordList) {
+        return wordList
                 .stream()
                 .collect(groupingBy(Main::canonicalFormRemoveDuplicate))
                 .entrySet()
@@ -48,15 +47,7 @@ public class Main {
     }
     public static List<List<String>> FindAllAnagrams(List<String> wordList)
     {
-        return (List<List<String>> )wordList
-                .stream()
-                .collect(groupingBy(Main::canonicalFormRemoveDuplicate))
-                .entrySet()
-                .stream()
-                .filter(entry -> entry.getValue().size() > 1)
-                .map(entry -> entry.getValue().stream().sorted().collect(Collectors.toList()))
-                .sorted(Comparator.comparing(l -> l.get(0)))
-                .collect(Collectors.toList());
+        return getLists(wordList);
     }
 
     public static void main(String[] args) {
